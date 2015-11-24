@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoGeoEspacial", "BancoGeoEspacial\BancoGeoEspacial.csproj", "{9BD07E26-FCB4-450F-887A-CE28A4CAF404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoDeDados", "BancoDeDados\BancoDeDados.csproj", "{C647CADB-8BEE-4A20-876D-AC545B243C44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bibilioteca", "Bibilioteca\Bibilioteca.csproj", "{42283478-206E-430A-B9DE-D32D72C39AE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Componente", "Componente\Componente.csproj", "{B3AA95A8-BB4D-493F-ACB5-F31F5644D542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NegocioPrincipal", "NegocioPrincipal\NegocioPrincipal.csproj", "{8F363DDE-F887-49AB-9AD2-770463B182F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "Logica\LogicaNegocio.csproj", "{C60794A2-A19E-481B-B5D6-2023DDC67603}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BD07E26-FCB4-450F-887A-CE28A4CAF404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD07E26-FCB4-450F-887A-CE28A4CAF404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD07E26-FCB4-450F-887A-CE28A4CAF404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD07E26-FCB4-450F-887A-CE28A4CAF404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C647CADB-8BEE-4A20-876D-AC545B243C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C647CADB-8BEE-4A20-876D-AC545B243C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C647CADB-8BEE-4A20-876D-AC545B243C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C647CADB-8BEE-4A20-876D-AC545B243C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42283478-206E-430A-B9DE-D32D72C39AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42283478-206E-430A-B9DE-D32D72C39AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42283478-206E-430A-B9DE-D32D72C39AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42283478-206E-430A-B9DE-D32D72C39AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3AA95A8-BB4D-493F-ACB5-F31F5644D542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AA95A8-BB4D-493F-ACB5-F31F5644D542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AA95A8-BB4D-493F-ACB5-F31F5644D542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AA95A8-BB4D-493F-ACB5-F31F5644D542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F363DDE-F887-49AB-9AD2-770463B182F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F363DDE-F887-49AB-9AD2-770463B182F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F363DDE-F887-49AB-9AD2-770463B182F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F363DDE-F887-49AB-9AD2-770463B182F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60794A2-A19E-481B-B5D6-2023DDC67603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60794A2-A19E-481B-B5D6-2023DDC67603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60794A2-A19E-481B-B5D6-2023DDC67603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60794A2-A19E-481B-B5D6-2023DDC67603}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

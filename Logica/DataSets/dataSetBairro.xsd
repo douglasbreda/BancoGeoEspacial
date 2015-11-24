@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataSetBairro" targetNamespace="http://tempuri.org/dataSetBairro.xsd" xmlns:mstns="http://tempuri.org/dataSetBairro.xsd" xmlns="http://tempuri.org/dataSetBairro.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataSetBairro" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dataSetBairro" msprop:Generator_UserDSName="dataSetBairro">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="bairro" msprop:Generator_TableClassName="bairroDataTable" msprop:Generator_TableVarName="tablebairro" msprop:Generator_RowChangedName="bairroRowChanged" msprop:Generator_TablePropName="bairro" msprop:Generator_RowDeletingName="bairroRowDeleting" msprop:Generator_RowChangingName="bairroRowChanging" msprop:Generator_RowEvHandlerName="bairroRowChangeEventHandler" msprop:Generator_RowDeletedName="bairroRowDeleted" msprop:Generator_RowClassName="bairroRow" msprop:Generator_UserTableName="bairro" msprop:Generator_RowEvArgName="bairroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" type="xs:string" minOccurs="0" />
+              <xs:element name="pl_coordenada" msprop:Generator_ColumnVarNameInTable="columnpl_coordenada" msprop:Generator_ColumnPropNameInRow="pl_coordenada" msprop:Generator_ColumnPropNameInTable="pl_coordenadaColumn" msprop:Generator_UserColumnName="pl_coordenada" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:bairro" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
