@@ -53,6 +53,11 @@ namespace Bibilioteca
         /// </summary>
         public static int ContadorBarraProgresso { get; set; }
 
+        /// <summary>
+        /// Define o tipo do dados geográfico
+        /// </summary>
+        public static eTipoDadoGeografico TipoDadoGeo { get; set; }
+
         #endregion End [Properties]
 
         #region [Methods]

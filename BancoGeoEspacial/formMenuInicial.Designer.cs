@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             this.panelResto = new System.Windows.Forms.Panel();
+            this.btnRelatorios = new System.Windows.Forms.Button();
+            this.btnOcorrencias = new System.Windows.Forms.Button();
             this.txt_copyrigt = new System.Windows.Forms.Label();
-            this.txt_ver = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBairro = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisa = new System.Windows.Forms.Label();
-            this.btnOcorrencias = new System.Windows.Forms.Button();
-            this.btnRelatorios = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_ver = new System.Windows.Forms.Label();
             this.panelResto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelResto
             // 
             this.panelResto.BackColor = System.Drawing.Color.SkyBlue;
+            this.panelResto.Controls.Add(this.panel2);
             this.panelResto.Controls.Add(this.btnRelatorios);
             this.panelResto.Controls.Add(this.btnOcorrencias);
-            this.panelResto.Controls.Add(this.txt_copyrigt);
-            this.panelResto.Controls.Add(this.txt_ver);
             this.panelResto.Controls.Add(this.pictureBox2);
             this.panelResto.Controls.Add(this.btnBairro);
             this.panelResto.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -60,25 +61,44 @@
             this.panelResto.Size = new System.Drawing.Size(746, 380);
             this.panelResto.TabIndex = 4;
             // 
+            // btnRelatorios
+            // 
+            this.btnRelatorios.BackColor = System.Drawing.Color.White;
+            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorios.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnRelatorios.Location = new System.Drawing.Point(95, 125);
+            this.btnRelatorios.Name = "btnRelatorios";
+            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRelatorios.Size = new System.Drawing.Size(163, 36);
+            this.btnRelatorios.TabIndex = 9;
+            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.UseVisualStyleBackColor = false;
+            // 
+            // btnOcorrencias
+            // 
+            this.btnOcorrencias.BackColor = System.Drawing.Color.White;
+            this.btnOcorrencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOcorrencias.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnOcorrencias.Location = new System.Drawing.Point(95, 83);
+            this.btnOcorrencias.Name = "btnOcorrencias";
+            this.btnOcorrencias.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOcorrencias.Size = new System.Drawing.Size(163, 36);
+            this.btnOcorrencias.TabIndex = 8;
+            this.btnOcorrencias.Text = "Ocorrências";
+            this.btnOcorrencias.UseVisualStyleBackColor = false;
+            // 
             // txt_copyrigt
             // 
             this.txt_copyrigt.AutoSize = true;
             this.txt_copyrigt.BackColor = System.Drawing.Color.Transparent;
-            this.txt_copyrigt.Location = new System.Drawing.Point(258, 358);
+            this.txt_copyrigt.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_copyrigt.Location = new System.Drawing.Point(0, 0);
             this.txt_copyrigt.Name = "txt_copyrigt";
             this.txt_copyrigt.Size = new System.Drawing.Size(226, 13);
             this.txt_copyrigt.TabIndex = 7;
             this.txt_copyrigt.Text = "Direitos Autorais: Daniel Noal e Douglas Breda";
-            // 
-            // txt_ver
-            // 
-            this.txt_ver.AutoSize = true;
-            this.txt_ver.BackColor = System.Drawing.Color.Transparent;
-            this.txt_ver.Location = new System.Drawing.Point(676, 358);
-            this.txt_ver.Name = "txt_ver";
-            this.txt_ver.Size = new System.Drawing.Size(58, 13);
-            this.txt_ver.TabIndex = 6;
-            this.txt_ver.Text = "Versão 1.0";
             // 
             // pictureBox2
             // 
@@ -143,33 +163,26 @@
             this.txtPesquisa.TabIndex = 3;
             this.txtPesquisa.Text = "Pesquisa";
             // 
-            // btnOcorrencias
+            // panel2
             // 
-            this.btnOcorrencias.BackColor = System.Drawing.Color.White;
-            this.btnOcorrencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOcorrencias.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnOcorrencias.Location = new System.Drawing.Point(95, 83);
-            this.btnOcorrencias.Name = "btnOcorrencias";
-            this.btnOcorrencias.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOcorrencias.Size = new System.Drawing.Size(163, 36);
-            this.btnOcorrencias.TabIndex = 8;
-            this.btnOcorrencias.Text = "Ocorrências";
-            this.btnOcorrencias.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.txt_ver);
+            this.panel2.Controls.Add(this.txt_copyrigt);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 362);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(746, 18);
+            this.panel2.TabIndex = 10;
             // 
-            // btnRelatorios
+            // txt_ver
             // 
-            this.btnRelatorios.BackColor = System.Drawing.Color.White;
-            this.btnRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorios.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnRelatorios.Location = new System.Drawing.Point(95, 125);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRelatorios.Size = new System.Drawing.Size(163, 36);
-            this.btnRelatorios.TabIndex = 9;
-            this.btnRelatorios.Text = "Relatórios";
-            this.btnRelatorios.UseVisualStyleBackColor = false;
+            this.txt_ver.AutoSize = true;
+            this.txt_ver.BackColor = System.Drawing.Color.Transparent;
+            this.txt_ver.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_ver.Location = new System.Drawing.Point(226, 0);
+            this.txt_ver.Name = "txt_ver";
+            this.txt_ver.Size = new System.Drawing.Size(58, 13);
+            this.txt_ver.TabIndex = 8;
+            this.txt_ver.Text = "Versão 1.0";
             // 
             // formMenuInicial
             // 
@@ -183,11 +196,12 @@
             this.Text = "Menu Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelResto.ResumeLayout(false);
-            this.panelResto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,8 +216,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label txt_copyrigt;
-        private System.Windows.Forms.Label txt_ver;
         public System.Windows.Forms.Button btnRelatorios;
         public System.Windows.Forms.Button btnOcorrencias;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label txt_ver;
     }
 }

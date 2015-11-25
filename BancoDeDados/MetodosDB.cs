@@ -66,10 +66,12 @@ namespace BancoDeDados
         {
             StringBuilder strbCampos = new StringBuilder();
             StringBuilder strbParametros = new StringBuilder();
+            StringBuilder sbInsertGeo = new StringBuilder();
             string sCampos = "";
             string sParametros;
             string sRetorno = "";
-            string sColuna = "";
+            string sCoordenadas = "";
+            bool bDadosGeo = false;
 
             foreach (DataColumn col in pDrw.Table.Columns)
             {
@@ -77,40 +79,61 @@ namespace BancoDeDados
                 if (!col.ColumnName.Equals("id"))
                 {
                     if (col.ColumnName.Equals("id_usuario"))
-                        pDrw[col] = Propriedades.CodigoUsuario; 
+                        pDrw[col] = Propriedades.CodigoUsuario;
 
                     sCampos = col.ColumnName;
-                    sParametros = "@" + col.ColumnName;
-
                     strbCampos.Append(sCampos);
-                    strbParametros.Append(sParametros);
                     strbCampos.Append(",");
-                    strbParametros.Append(",");
+
                     if (col.ColumnName.Contains("pl_") || col.ColumnName.Contains("pt_"))
                     {
                         string[] asCoordenadas = pDrw[col].ToString().Trim().Split(',');
                         NpgsqlPoint[] pontos = new NpgsqlPoint[asCoordenadas.Length];
                         int iContador = 0;
+                        bDadosGeo = true;
                         foreach (string sCo in asCoordenadas)
                         {
                             pontos[iContador] = new NpgsqlPoint(Convert.ToSingle(sCo.Substring(0, (Convert.ToInt32(sCo.Length) / 2))), Convert.ToSingle(sCo.Substring(Convert.ToInt32(sCo.Length) / 2)));
                             iContador++;
                         }
 
-                        pCmd.Parameters.Add(new NpgsqlParameter(sParametros, new NpgsqlPolygon(pontos)));
+                        sCoordenadas = string.Join(",", pontos.AsEnumerable().Select(item => item.X.ToString() + " " + item.Y.ToString()).ToArray<string>());
                     }
                     else
+                    {
+                        
+                        sParametros = "@" + col.ColumnName;
+                        strbParametros.Append(sParametros);
+                        strbParametros.Append(",");
                         pCmd.Parameters.Add(new NpgsqlParameter(sParametros, pDrw[col]));
+                    }
                 }
             }
 
             sCampos = Funcoes.RetirarVirgulasDoFimDaString(strbCampos.ToString());
             sParametros = Funcoes.RetirarVirgulasDoFimDaString(strbParametros.ToString());
 
+            if (!bDadosGeo)
+            {
+                sRetorno = "INSERT INTO " + pDrw.Table.TableName + " ( " + sCampos + ")" + " VALUES ( " + sParametros + ")";
+            }
+            else
+            {
+                string sPolygon = "POLYGON";
+                string sPoint = "POINT";
 
-            sRetorno = "INSERT INTO " + pDrw.Table.TableName + " ( " + sCampos + ")" + " VALUES ( " + sParametros + ")";
+                sbInsertGeo.AppendLine("INSERT INTO");
+                sbInsertGeo.AppendLine(pDrw.Table.TableName);
+                sbInsertGeo.AppendLine("( " + sCampos + ")");
+                sbInsertGeo.AppendLine("VALUES (" + sParametros);
+                sbInsertGeo.AppendLine(", st_geomfromtext(' " + (Propriedades.TipoDadoGeo == eTipoDadoGeografico.polygon ? "POLYGON" : "POINT") + sCoordenadas + "))', 4326))");
+                //inserir o tipo da coluna de acordo com o definido nas propriedades
 
-            return sRetorno;
+                sRetorno = sbInsertGeo.ToString();
+            }
+
+
+                return sRetorno;
         }
 
         private string MontarComandosAlteracao(DataRow pDrw, NpgsqlCommand pCmd)

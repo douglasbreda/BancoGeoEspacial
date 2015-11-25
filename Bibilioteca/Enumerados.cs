@@ -28,4 +28,19 @@ namespace Bibilioteca
         /// </summary>
         exclusion = 3
     }
+
+    /// <summary>
+    /// Define qual é o tipo do dado geoespacial que está sendo inserido
+    /// </summary>
+    public enum eTipoDadoGeografico
+    {
+        /// <summary>
+        /// Tipo POINT
+        /// </summary>
+        point = 0,
+        /// <summary>
+        /// Tipo POLYGON
+        /// </summary>
+        polygon = 1
+    }
 }
