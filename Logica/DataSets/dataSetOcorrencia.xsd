@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataSetOcorrencia" targetNamespace="http://tempuri.org/dataSetOcorrencia.xsd" xmlns:mstns="http://tempuri.org/dataSetOcorrencia.xsd" xmlns="http://tempuri.org/dataSetOcorrencia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataSetOcorrencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dataSetOcorrencia" msprop:Generator_UserDSName="dataSetOcorrencia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ocorrencia" msprop:Generator_TableClassName="ocorrenciaDataTable" msprop:Generator_TableVarName="tableocorrencia" msprop:Generator_TablePropName="ocorrencia" msprop:Generator_RowDeletingName="ocorrenciaRowDeleting" msprop:Generator_RowChangingName="ocorrenciaRowChanging" msprop:Generator_RowEvHandlerName="ocorrenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="ocorrenciaRowDeleted" msprop:Generator_UserTableName="ocorrencia" msprop:Generator_RowChangedName="ocorrenciaRowChanged" msprop:Generator_RowEvArgName="ocorrenciaRowChangeEvent" msprop:Generator_RowClassName="ocorrenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" type="xs:int" minOccurs="0" />
+              <xs:element name="pt_ponto" msprop:Generator_ColumnVarNameInTable="columnpt_ponto" msprop:Generator_ColumnPropNameInRow="pt_ponto" msprop:Generator_ColumnPropNameInTable="pt_pontoColumn" msprop:Generator_UserColumnName="pt_ponto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ocorrencia" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

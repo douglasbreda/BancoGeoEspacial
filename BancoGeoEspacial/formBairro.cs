@@ -18,7 +18,8 @@ namespace BancoGeoEspacial
         public formBairro()
         {
             InitializeComponent();
-            this.ListaComponentes = new Control[] { txtNome };
+            this.ListaComponentes = new Control[] { txtNome, txtLatitude, txtLongitude };
+            Propriedades.TipoDadoGeo = eTipoDadoGeografico.polygon;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -46,12 +47,13 @@ namespace BancoGeoEspacial
             dtbCoordenadas.Rows.Add(drw);
             grdConsulta.DataSource = dtbCoordenadas;
             grdConsulta.Refresh();
+            txtLatitude.Focus();
         }
 
         private void formBairro_Load(object sender, EventArgs e)
         {
-            DataColumn dcLatitude = new DataColumn("LONGITUDE", typeof(string));
-            DataColumn dcLongitude = new DataColumn("LATITUDE", typeof(string));
+            DataColumn dcLongitude = new DataColumn("LONGITUDE", typeof(string));
+            DataColumn dcLatitude = new DataColumn("LATITUDE", typeof(string));
             dtbCoordenadas.Columns.Add(dcLatitude);
             dtbCoordenadas.Columns.Add(dcLongitude);
         }
@@ -69,11 +71,29 @@ namespace BancoGeoEspacial
             foreach (DataRow drwCoordenada in dtbCoordenadas.Rows)
             {
                 sbCoordenada.Append(drwCoordenada["LONGITUDE"] + " " + drwCoordenada["LATITUDE"]);
-                sbCoordenada.Append(",");
+                sbCoordenada.Append(";");
             }
 
             sInicial = Funcoes.RetirarVirgulasDoFimDaString(sbCoordenada.ToString());
             ((DataRowView)bsoPrincipal.Current)["pl_coordenada"] = sInicial;
+        }
+
+        private void txtLatitude_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int asc = (int)e.KeyChar;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && asc != 45 && asc != 44)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLongitude_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int asc = (int)e.KeyChar;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && asc != 45 && asc != 44)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -25,8 +25,18 @@ namespace Componente
 
         public delegate void AntesDeGravarEventHandler(object source, EventArgs e);
 
-        [Category("Events"), Description("Executado antes de gravar os dados no banco")]
+        public delegate void DepoisDeGravarEventHandler(object source, EventArgs e);
+
+        public delegate void AposIncluirEventHandler(object source, EventArgs e);
+
+        [Category("Meus Eventos"), Description("Executado antes de gravar os dados no banco")]
         public event AntesDeGravarEventHandler AntesDeSalvar;
+
+        [Category("Meus Eventos"), Description("Executado depois de gravar os dados no banco")]
+        public event DepoisDeGravarEventHandler DepoisDeSalvar;
+
+        [Category("Meus Eventos"), Description("Executado após clicar no botão de incluir")]
+        public event AposIncluirEventHandler AposIncluir;
 
         #endregion End [Attributes]
 
@@ -139,6 +149,7 @@ namespace Componente
             Propriedades.ContadorBarraProgresso = 0;
             this.AtualizarBarraProgresso();
             this.progressBar.ResetText();
+            RaiseAposIncluir();
         }
 
         public virtual void Cancel()
@@ -247,7 +258,20 @@ namespace Componente
 
         public virtual void RaiseAoSalvar()
         {
-            AntesDeSalvar(this, new EventArgs());
+            if (AntesDeSalvar != null)
+                AntesDeSalvar(this, new EventArgs());
+        }
+
+        public virtual void RaiseDepoisSalvar()
+        {
+            if (DepoisDeSalvar != null)
+                DepoisDeSalvar(this, new EventArgs());
+        }
+
+        public virtual void RaiseAposIncluir()
+        {
+            if (AposIncluir != null)
+                AposIncluir(this, new EventArgs());
         }
         
         #endregion End [Methods]

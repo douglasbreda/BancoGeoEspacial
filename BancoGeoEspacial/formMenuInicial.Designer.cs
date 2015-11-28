@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panelResto = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_ver = new System.Windows.Forms.Label();
+            this.txt_copyrigt = new System.Windows.Forms.Label();
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnOcorrencias = new System.Windows.Forms.Button();
-            this.txt_copyrigt = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBairro = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPesquisa = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txt_ver = new System.Windows.Forms.Label();
             this.panelResto.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelResto
@@ -60,6 +60,38 @@
             this.panelResto.Name = "panelResto";
             this.panelResto.Size = new System.Drawing.Size(746, 380);
             this.panelResto.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txt_ver);
+            this.panel2.Controls.Add(this.txt_copyrigt);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 362);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(746, 18);
+            this.panel2.TabIndex = 10;
+            // 
+            // txt_ver
+            // 
+            this.txt_ver.AutoSize = true;
+            this.txt_ver.BackColor = System.Drawing.Color.Transparent;
+            this.txt_ver.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_ver.Location = new System.Drawing.Point(226, 0);
+            this.txt_ver.Name = "txt_ver";
+            this.txt_ver.Size = new System.Drawing.Size(58, 13);
+            this.txt_ver.TabIndex = 8;
+            this.txt_ver.Text = "Versão 1.0";
+            // 
+            // txt_copyrigt
+            // 
+            this.txt_copyrigt.AutoSize = true;
+            this.txt_copyrigt.BackColor = System.Drawing.Color.Transparent;
+            this.txt_copyrigt.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txt_copyrigt.Location = new System.Drawing.Point(0, 0);
+            this.txt_copyrigt.Name = "txt_copyrigt";
+            this.txt_copyrigt.Size = new System.Drawing.Size(226, 13);
+            this.txt_copyrigt.TabIndex = 7;
+            this.txt_copyrigt.Text = "Direitos Autorais: Daniel Noal e Douglas Breda";
             // 
             // btnRelatorios
             // 
@@ -88,17 +120,7 @@
             this.btnOcorrencias.TabIndex = 8;
             this.btnOcorrencias.Text = "Ocorrências";
             this.btnOcorrencias.UseVisualStyleBackColor = false;
-            // 
-            // txt_copyrigt
-            // 
-            this.txt_copyrigt.AutoSize = true;
-            this.txt_copyrigt.BackColor = System.Drawing.Color.Transparent;
-            this.txt_copyrigt.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txt_copyrigt.Location = new System.Drawing.Point(0, 0);
-            this.txt_copyrigt.Name = "txt_copyrigt";
-            this.txt_copyrigt.Size = new System.Drawing.Size(226, 13);
-            this.txt_copyrigt.TabIndex = 7;
-            this.txt_copyrigt.Text = "Direitos Autorais: Daniel Noal e Douglas Breda";
+            this.btnOcorrencias.Click += new System.EventHandler(this.btnOcorrencias_Click);
             // 
             // pictureBox2
             // 
@@ -163,27 +185,6 @@
             this.txtPesquisa.TabIndex = 3;
             this.txtPesquisa.Text = "Pesquisa";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txt_ver);
-            this.panel2.Controls.Add(this.txt_copyrigt);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 362);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 18);
-            this.panel2.TabIndex = 10;
-            // 
-            // txt_ver
-            // 
-            this.txt_ver.AutoSize = true;
-            this.txt_ver.BackColor = System.Drawing.Color.Transparent;
-            this.txt_ver.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txt_ver.Location = new System.Drawing.Point(226, 0);
-            this.txt_ver.Name = "txt_ver";
-            this.txt_ver.Size = new System.Drawing.Size(58, 13);
-            this.txt_ver.TabIndex = 8;
-            this.txt_ver.Text = "Versão 1.0";
-            // 
             // formMenuInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,12 +197,12 @@
             this.Text = "Menu Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelResto.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

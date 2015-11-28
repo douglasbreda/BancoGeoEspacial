@@ -36,6 +36,9 @@
     <Reference Include="CamadaLogica">
       <HintPath>..\CamadaLogica\bin\Debug\CamadaLogica.dll</HintPath>
     </Reference>
+    <Reference Include="Logica">
+      <HintPath>..\Logica\bin\Debug\Logica.dll</HintPath>
+    </Reference>
     <Reference Include="NegocioPrincipal">
       <HintPath>..\NegocioPrincipal\bin\Debug\NegocioPrincipal.dll</HintPath>
     </Reference>

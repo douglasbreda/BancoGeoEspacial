@@ -40,7 +40,7 @@
       <HintPath>..\Bibilioteca\bin\Debug\Bibilioteca.dll</HintPath>
     </Reference>
     <Reference Include="Componente">
-      <HintPath>..\Componente\bin\Debug\Componente.dll</HintPath>
+      <HintPath>..\NegocioPrincipal\bin\Debug\Componente.dll</HintPath>
     </Reference>
     <Reference Include="NegocioPrincipal">
       <HintPath>..\NegocioPrincipal\bin\Debug\NegocioPrincipal.dll</HintPath>

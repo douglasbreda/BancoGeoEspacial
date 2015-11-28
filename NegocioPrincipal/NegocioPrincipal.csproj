@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BancoDeDados">
+    <Reference Include="BancoDeDados, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BancoDeDados\bin\Debug\BancoDeDados.dll</HintPath>
     </Reference>
     <Reference Include="Bibilioteca">

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataSetPorCliente" targetNamespace="http://tempuri.org/dataSetPorCliente.xsd" xmlns:mstns="http://tempuri.org/dataSetPorCliente.xsd" xmlns="http://tempuri.org/dataSetPorCliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataSetPorCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dataSetPorCliente" msprop:Generator_UserDSName="dataSetPorCliente">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TOTAL_CLIENTE" msprop:Generator_TableClassName="TOTAL_CLIENTEDataTable" msprop:Generator_TableVarName="tableTOTAL_CLIENTE" msprop:Generator_TablePropName="TOTAL_CLIENTE" msprop:Generator_RowDeletingName="TOTAL_CLIENTERowDeleting" msprop:Generator_RowChangingName="TOTAL_CLIENTERowChanging" msprop:Generator_RowEvHandlerName="TOTAL_CLIENTERowChangeEventHandler" msprop:Generator_RowDeletedName="TOTAL_CLIENTERowDeleted" msprop:Generator_UserTableName="TOTAL_CLIENTE" msprop:Generator_RowChangedName="TOTAL_CLIENTERowChanged" msprop:Generator_RowEvArgName="TOTAL_CLIENTERowChangeEvent" msprop:Generator_RowClassName="TOTAL_CLIENTERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_cliente" msprop:Generator_ColumnVarNameInTable="columncodigo_cliente" msprop:Generator_ColumnPropNameInRow="codigo_cliente" msprop:Generator_ColumnPropNameInTable="codigo_clienteColumn" msprop:Generator_UserColumnName="codigo_cliente" type="xs:int" minOccurs="0" />
+              <xs:element name="nome_cliente" msprop:Generator_ColumnVarNameInTable="columnnome_cliente" msprop:Generator_ColumnPropNameInRow="nome_cliente" msprop:Generator_ColumnPropNameInTable="nome_clienteColumn" msprop:Generator_UserColumnName="nome_cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="total_gasto" msprop:Generator_ColumnVarNameInTable="columntotal_gasto" msprop:Generator_ColumnPropNameInRow="total_gasto" msprop:Generator_ColumnPropNameInTable="total_gastoColumn" msprop:Generator_UserColumnName="total_gasto" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

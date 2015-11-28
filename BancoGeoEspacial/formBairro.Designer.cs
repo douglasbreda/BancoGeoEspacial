@@ -141,6 +141,7 @@
             this.grdConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdConsulta.Location = new System.Drawing.Point(0, 30);
             this.grdConsulta.Name = "grdConsulta";
+            this.grdConsulta.ReadOnly = true;
             this.grdConsulta.Size = new System.Drawing.Size(641, 208);
             this.grdConsulta.TabIndex = 0;
             // 
@@ -164,6 +165,7 @@
             this.txtLongitude.Name = "txtLongitude";
             this.txtLongitude.Size = new System.Drawing.Size(128, 26);
             this.txtLongitude.TabIndex = 3;
+            this.txtLongitude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLongitude_KeyPress);
             // 
             // lbllongitude
             // 
@@ -183,6 +185,7 @@
             this.txtLatitude.Name = "txtLatitude";
             this.txtLatitude.Size = new System.Drawing.Size(128, 26);
             this.txtLatitude.TabIndex = 1;
+            this.txtLatitude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLatitude_KeyPress);
             // 
             // btnAdicionar
             // 
@@ -214,7 +217,6 @@
             this.ClientSize = new System.Drawing.Size(655, 471);
             this.Name = "formBairro";
             this.Text = "Bairro";
-            this.AntesDeSalvar += new Componente.formCadastro.AntesDeGravarEventHandler(this.formBairro_AntesDeSalvar);
             this.Load += new System.EventHandler(this.formBairro_Load);
             this.tabPagePesquisa.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);

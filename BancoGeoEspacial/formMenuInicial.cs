@@ -23,5 +23,11 @@ namespace Formularios
             formBairro oBairro = new formBairro();
             oBairro.Show();
         }
+
+        private void btnOcorrencias_Click(object sender, EventArgs e)
+        {
+            formOcorrencias oOcorrencia = new formOcorrencias();
+            oOcorrencia.Show();
+        }
     }
 }
