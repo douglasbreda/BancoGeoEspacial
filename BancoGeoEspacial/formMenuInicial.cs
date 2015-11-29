@@ -29,5 +29,17 @@ namespace Formularios
             formOcorrencias oOcorrencia = new formOcorrencias();
             oOcorrencia.Show();
         }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            this.GerarRelatorio();
+        }
+
+        private void GerarRelatorio()
+        {
+            dataSetRelatorio1.ocorrencia_por_bairro.Clear();
+            dataSetRelatorio1.ocorrencia_por_bairro.Merge(classeRelatorios1.BuscarDadosRelatorio());
+            classeRelatorios1.ExibirRelatorio(dataSetRelatorio1, classeRelatorios1.CaminhoPadraoRelatorio);
+        }
     }
 }

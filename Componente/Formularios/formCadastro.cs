@@ -45,7 +45,6 @@ namespace Componente
         [Category("NossosComponentes"), Description("Classe para gravar os dados no banco")]
         public LogicaNegocio classeDados { get; set; }
 
-        
         /// <summary>
         /// Define o modo de navegação do formulário
         /// </summary>

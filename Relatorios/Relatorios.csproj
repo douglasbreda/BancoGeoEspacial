@@ -61,21 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ClasseRelatorios.cs" />
-    <Compile Include="DataSets\dataSetPorCategoria.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetPorCategoria.xsd</DependentUpon>
+    <Compile Include="Classes\ClasseRelatorios.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataSets\dataSetPorCliente.Designer.cs">
+    <Compile Include="DataSets\dataSetRelatorio.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetPorCliente.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\dataSetProblemasReportados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetProblemasReportados.xsd</DependentUpon>
+      <DependentUpon>dataSetRelatorio.xsd</DependentUpon>
     </Compile>
     <Compile Include="formReportPadrao.cs">
       <SubType>Form</SubType>
@@ -85,66 +77,25 @@
     </Compile>
     <Compile Include="Relatorios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataSets\dataSetTotalProblemas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetTotalProblemas.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="formReportPadrao.resx">
       <DependentUpon>formReportPadrao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\relatorioPorCategoria.rdlc" />
-    <EmbeddedResource Include="Reports\relatorioProblemasPorMes.rdlc" />
-    <EmbeddedResource Include="Reports\relatorioTotaldeProblemas.rdlc" />
-    <EmbeddedResource Include="Reports\relatorioTotalPorCliente.rdlc" />
+    <EmbeddedResource Include="Reports\reportOcorrencia.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSets\dataSetPorCategoria.xsc">
-      <DependentUpon>dataSetPorCategoria.xsd</DependentUpon>
+    <None Include="DataSets\dataSetRelatorio.xsc">
+      <DependentUpon>dataSetRelatorio.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\dataSetPorCategoria.xsd">
+    <None Include="DataSets\dataSetRelatorio.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetPorCategoria.Designer.cs</LastGenOutput>
+      <LastGenOutput>dataSetRelatorio.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSets\dataSetPorCategoria.xss">
-      <DependentUpon>dataSetPorCategoria.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetPorCliente.xsc">
-      <DependentUpon>dataSetPorCliente.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetPorCliente.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetPorCliente.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\dataSetPorCliente.xss">
-      <DependentUpon>dataSetPorCliente.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetProblemasReportados.xsc">
-      <DependentUpon>dataSetProblemasReportados.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetProblemasReportados.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetProblemasReportados.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\dataSetProblemasReportados.xss">
-      <DependentUpon>dataSetProblemasReportados.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetTotalProblemas.xsc">
-      <DependentUpon>dataSetTotalProblemas.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\dataSetTotalProblemas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetTotalProblemas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\dataSetTotalProblemas.xss">
-      <DependentUpon>dataSetTotalProblemas.xsd</DependentUpon>
+    <None Include="DataSets\dataSetRelatorio.xss">
+      <DependentUpon>dataSetRelatorio.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

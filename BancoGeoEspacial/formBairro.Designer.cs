@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dataSetBairro1 = new Logica.DataSets.dataSetBairro();
-            this.bairro1 = new Logica.Bairro();
             this.pnlTopo = new System.Windows.Forms.Panel();
             this.pnlGrade = new System.Windows.Forms.Panel();
             this.grdConsulta = new System.Windows.Forms.DataGridView();
@@ -45,17 +44,27 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.bsoCoordenadas = new System.Windows.Forms.BindingSource(this.components);
+            this.bairro1 = new Logica.Classes.Bairro();
+            this.gridPesquisa = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnKml = new System.Windows.Forms.Button();
             this.tabPagePesquisa.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPrincipal)).BeginInit();
+            this.panelGrid.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBairro1)).BeginInit();
             this.pnlTopo.SuspendLayout();
             this.pnlGrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsulta)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsoCoordenadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPesquisa)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageCadastro
@@ -67,6 +76,19 @@
             // 
             this.bsoPrincipal.DataMember = "bairro";
             this.bsoPrincipal.DataSource = this.dataSetBairro1;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // panelGrid
+            // 
+            this.panelGrid.Controls.Add(this.gridPesquisa);
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.Controls.Add(this.panel5);
+            this.panelButtons.Controls.SetChildIndex(this.panel5, 0);
             // 
             // txtCodigo
             // 
@@ -107,10 +129,6 @@
             // 
             this.dataSetBairro1.DataSetName = "dataSetBairro";
             this.dataSetBairro1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bairro1
-            // 
-            this.bairro1.transaction = null;
             // 
             // pnlTopo
             // 
@@ -209,6 +227,62 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Latitude";
             // 
+            // bairro1
+            // 
+            this.bairro1.transaction = null;
+            // 
+            // gridPesquisa
+            // 
+            this.gridPesquisa.AutoGenerateColumns = false;
+            this.gridPesquisa.BackgroundColor = System.Drawing.Color.White;
+            this.gridPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn});
+            this.gridPesquisa.DataSource = this.bsoPrincipal;
+            this.gridPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPesquisa.Location = new System.Drawing.Point(0, 0);
+            this.gridPesquisa.Name = "gridPesquisa";
+            this.gridPesquisa.ReadOnly = true;
+            this.gridPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridPesquisa.Size = new System.Drawing.Size(641, 284);
+            this.gridPesquisa.TabIndex = 0;
+            this.gridPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPesquisa_CellDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnKml);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(241, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(78, 42);
+            this.panel5.TabIndex = 6;
+            // 
+            // btnKml
+            // 
+            this.btnKml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKml.Location = new System.Drawing.Point(5, 9);
+            this.btnKml.Name = "btnKml";
+            this.btnKml.Size = new System.Drawing.Size(73, 30);
+            this.btnKml.TabIndex = 0;
+            this.btnKml.Text = "KML";
+            this.btnKml.UseVisualStyleBackColor = true;
+            this.btnKml.Click += new System.EventHandler(this.btnKml_Click);
+            // 
             // formBairro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,12 +291,15 @@
             this.ClientSize = new System.Drawing.Size(655, 471);
             this.Name = "formBairro";
             this.Text = "Bairro";
+            this.AntesDeSalvar += new Componente.formCadastro.AntesDeGravarEventHandler(this.formBairro_AntesDeSalvar);
             this.Load += new System.EventHandler(this.formBairro_Load);
             this.tabPagePesquisa.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.panelFilter.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsoPrincipal)).EndInit();
+            this.panelGrid.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBairro1)).EndInit();
             this.pnlTopo.ResumeLayout(false);
             this.pnlTopo.PerformLayout();
@@ -231,6 +308,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsoCoordenadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPesquisa)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -242,7 +321,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
         private Logica.DataSets.dataSetBairro dataSetBairro1;
-        private Logica.Bairro bairro1;
         private System.Windows.Forms.Panel pnlGrade;
         private System.Windows.Forms.Panel pnlTopo;
         private System.Windows.Forms.Button btnAdicionar;
@@ -253,5 +331,11 @@
         private System.Windows.Forms.TextBox txtLongitude;
         private System.Windows.Forms.Label lbllongitude;
         private System.Windows.Forms.TextBox txtLatitude;
+        private Logica.Classes.Bairro bairro1;
+        private System.Windows.Forms.DataGridView gridPesquisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnKml;
     }
 }

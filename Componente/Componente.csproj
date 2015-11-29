@@ -36,15 +36,12 @@
     <Reference Include="CamadaLogica">
       <HintPath>..\CamadaLogica\bin\Debug\CamadaLogica.dll</HintPath>
     </Reference>
-    <Reference Include="Componente">
-      <HintPath>..\NegocioPrincipal\bin\Debug\Componente.dll</HintPath>
-    </Reference>
     <Reference Include="NegocioPrincipal">
       <HintPath>..\NegocioPrincipal\bin\Debug\NegocioPrincipal.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BancoDeDados\bin\Debug\Npgsql.dll</HintPath>
+      <HintPath>..\BancoGeoEspacial\bin\Debug\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -36,17 +36,23 @@
     <Reference Include="Bibilioteca">
       <HintPath>..\NegocioPrincipal\bin\Debug\Bibilioteca.dll</HintPath>
     </Reference>
-    <Reference Include="CamadaLogica">
-      <HintPath>..\NegocioPrincipal\bin\Debug\CamadaLogica.dll</HintPath>
-    </Reference>
     <Reference Include="Componente">
       <HintPath>..\NegocioPrincipal\bin\Debug\Componente.dll</HintPath>
     </Reference>
     <Reference Include="Formularios">
       <HintPath>..\NegocioPrincipal\bin\Debug\Formularios.dll</HintPath>
     </Reference>
-    <Reference Include="NegocioPrincipal">
+    <Reference Include="NegocioPrincipal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\NegocioPrincipal\bin\Debug\NegocioPrincipal.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpKml, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9bb853c026a5c0ac, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SharpKml.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Bairro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\GeradorKml.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Ocorrencia.cs">

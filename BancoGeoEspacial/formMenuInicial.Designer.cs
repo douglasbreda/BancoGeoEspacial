@@ -36,15 +36,16 @@
             this.btnOcorrencias = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBairro = new System.Windows.Forms.Button();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtPesquisa = new System.Windows.Forms.Label();
+            this.dataSetRelatorio1 = new Relatorios.DataSets.dataSetRelatorio();
+            this.classeRelatorios1 = new Relatorios.ClasseRelatorios();
             this.panelResto.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRelatorio1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelResto
@@ -106,6 +107,7 @@
             this.btnRelatorios.TabIndex = 9;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = false;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // btnOcorrencias
             // 
@@ -146,19 +148,10 @@
             this.btnBairro.UseVisualStyleBackColor = false;
             this.btnBairro.Click += new System.EventHandler(this.btnBairro_Click);
             // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Location = new System.Drawing.Point(588, 33);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(146, 20);
-            this.txtPesquisar.TabIndex = 2;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.txtPesquisa);
-            this.panel1.Controls.Add(this.txtPesquisar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -174,16 +167,14 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // txtPesquisa
+            // dataSetRelatorio1
             // 
-            this.txtPesquisa.AutoSize = true;
-            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.txtPesquisa.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(507, 31);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(75, 20);
-            this.txtPesquisa.TabIndex = 3;
-            this.txtPesquisa.Text = "Pesquisa";
+            this.dataSetRelatorio1.DataSetName = "dataSetRelatorio";
+            this.dataSetRelatorio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // classeRelatorios1
+            // 
+            this.classeRelatorios1.transaction = null;
             // 
             // formMenuInicial
             // 
@@ -201,8 +192,8 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRelatorio1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,9 +201,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelResto;
-        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label txtPesquisa;
         public System.Windows.Forms.Button btnBairro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -221,5 +210,7 @@
         public System.Windows.Forms.Button btnOcorrencias;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label txt_ver;
+        private Relatorios.DataSets.dataSetRelatorio dataSetRelatorio1;
+        private Relatorios.ClasseRelatorios classeRelatorios1;
     }
 }

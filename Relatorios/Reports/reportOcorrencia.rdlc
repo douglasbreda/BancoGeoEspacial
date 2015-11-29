@@ -6,26 +6,26 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>13.67896cm</Width>
+              <Width>5.66082cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.83104cm</Width>
+              <Width>5.66082cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox2">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Categoria</Value>
+                              <Value>Bairro</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -36,7 +36,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -52,34 +52,25 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox4">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nº de Chamados</Value>
+                              <Value>Número de Ocorrências</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -96,27 +87,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descricao_categoria">
+                    <Textbox Name="nome">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descricao_categoria.Value</Value>
+                              <Value>=Fields!nome.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descricao_categoria</rd:DefaultName>
+                      <rd:DefaultName>nome</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -132,23 +121,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="numero_chamados">
+                    <Textbox Name="qtd_ocorrencia">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!numero_chamados.Value</Value>
+                              <Value>=Fields!qtd_ocorrencia.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>numero_chamados</rd:DefaultName>
+                      <rd:DefaultName>qtd_ocorrencia</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -182,10 +169,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>dataSetPorCategoria_POR_CATEGORIA</DataSetName>
-        <Top>0.14111cm</Top>
-        <Height>1cm</Height>
-        <Width>16.51cm</Width>
+        <DataSetName>dataSetRelatorio_ocorrencia_por_bairro</DataSetName>
+        <Top>0.10583cm</Top>
+        <Height>1.2cm</Height>
+        <Width>11.32164cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -193,48 +180,70 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.94792in</Height>
+    <Height>0.54166in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.73958in</Width>
   <Page>
     <PageHeader>
-      <Height>1.08479cm</Height>
+      <Height>1.07354cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Relatório Por Categoria</Value>
-                  <Style>
-                    <FontSize>18pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
+        <Rectangle Name="Rectangle1">
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Relatório de Ocorrências por Bairros</Value>
+                      <Style>
+                        <FontSize>15pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontSize>15pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.2cm</Top>
+              <Left>4.13016cm</Left>
+              <Height>0.73229cm</Height>
+              <Width>8.79708cm</Width>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.03817cm</Top>
-          <Height>0.94078cm</Height>
-          <Width>16.51cm</Width>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Height>0.94125cm</Height>
+          <Width>16.98245cm</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
-        </Textbox>
+        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
@@ -253,34 +262,38 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="dataSetPorCategoria">
+    <DataSource Name="dataSetRelatorio">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>83fc8889-22d4-4b8d-90cc-4e9eca719621</rd:DataSourceID>
+      <rd:DataSourceID>a6d8abf0-8cd4-4224-adbf-e00258882c4d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dataSetPorCategoria_POR_CATEGORIA">
+    <DataSet Name="dataSetRelatorio_ocorrencia_por_bairro">
       <Query>
-        <DataSourceName>dataSetPorCategoria</DataSourceName>
+        <DataSourceName>dataSetRelatorio</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="descricao_categoria">
-          <DataField>descricao_categoria</DataField>
+        <Field Name="id_bairro">
+          <DataField>id_bairro</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nome">
+          <DataField>nome</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="numero_chamados">
-          <DataField>numero_chamados</DataField>
+        <Field Name="qtd_ocorrencia">
+          <DataField>qtd_ocorrencia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>dataSetPorCategoria</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Dell\Desktop\BancoDeDados 1.5\Relatorios\DataSets\dataSetPorCategoria.xsd</rd:SchemaPath>
-        <rd:TableName>POR_CATEGORIA</rd:TableName>
+        <rd:DataSetName>dataSetRelatorio</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\dougl\Documents\Visual Studio 2015\Projects\BancoGeoEspacial\BancoGeoEspacial\Relatorios\DataSets\dataSetRelatorio.xsd</rd:SchemaPath>
+        <rd:TableName>ocorrencia_por_bairro</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -288,5 +301,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>4ba0130a-0076-4bd4-91cc-0270cefdf6eb</rd:ReportID>
+  <rd:ReportID>b9c9d665-d05c-418a-8a24-f33f79490a29</rd:ReportID>
 </Report>

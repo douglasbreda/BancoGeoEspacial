@@ -39,9 +39,15 @@
     <Reference Include="Bibilioteca">
       <HintPath>..\Bibilioteca\bin\Debug\Bibilioteca.dll</HintPath>
     </Reference>
-    <Reference Include="Componente">
-      <HintPath>..\NegocioPrincipal\bin\Debug\Componente.dll</HintPath>
+    <Reference Include="Componente, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Componente\bin\Debug\Componente.dll</HintPath>
     </Reference>
+    <Reference Include="Logica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Logica\bin\Debug\Logica.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="NegocioPrincipal">
       <HintPath>..\NegocioPrincipal\bin\Debug\NegocioPrincipal.dll</HintPath>
     </Reference>
@@ -120,9 +126,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logica\LogicaNegocio.csproj">
-      <Project>{C60794A2-A19E-481B-B5D6-2023DDC67603}</Project>
-      <Name>LogicaNegocio</Name>
+    <ProjectReference Include="..\Relatorios\Relatorios.csproj">
+      <Project>{A4F15218-A151-4C04-B612-82A54CA5B29A}</Project>
+      <Name>Relatorios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

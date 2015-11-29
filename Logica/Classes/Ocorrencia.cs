@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Logica.Classes
 {
-    public class Bairro : LogicaNegocio
+    public class Ocorrencia : LogicaNegocio
     {
         #region [Construtores]
 
         /// <summary>
         /// Construtor padrão
         /// </summary>
-        public Bairro()
+        public Ocorrencia()
         {
 
         }
@@ -25,23 +25,27 @@ namespace Logica.Classes
         #region [Métodos]
 
         /// <summary>
-        /// Retorna todos os bairros cadastrados
+        /// Retorna as ocorrências
         /// </summary>
         /// <returns></returns>
-        public DataTable BuscarBairros()
+        public DataTable BuscarOcorrencias()
         {
             StringBuilder sbSql = new StringBuilder();
 
-            sbSql.AppendLine("  SELECT");
-            sbSql.AppendLine("      *");
-            sbSql.AppendLine("  FROM");
-            sbSql.AppendLine("      bairro");
+            sbSql.AppendLine("   select");
+            sbSql.AppendLine("      ocorrencia.id,");
+            sbSql.AppendLine("      ocorrencia.descricao,");
+            sbSql.AppendLine("      ocorrencia.tipo,");
+            sbSql.AppendLine("      st_x(pt_ponto) as pt_x,");
+            sbSql.AppendLine("      st_y(pt_ponto) as pt_y");
+            sbSql.AppendLine("    from");
+            sbSql.AppendLine("      ocorrencia");
 
             return ExecutarComando(sbSql);
         }
 
         /// <summary>
-        /// Retorna a string principal do kml
+        /// Retorna o kml 
         /// </summary>
         /// <param name="pCodBairro"></param>
         /// <returns></returns>
@@ -55,6 +59,7 @@ namespace Logica.Classes
 
             return ExecutarComando(sbSql).Rows[0]["kml"].ToString();
         }
+
 
         #endregion Fim [Métodos]
     }

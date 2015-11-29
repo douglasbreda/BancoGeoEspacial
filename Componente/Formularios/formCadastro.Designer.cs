@@ -353,7 +353,6 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Panel panelBtnAlter;
@@ -371,5 +370,6 @@
         private System.Windows.Forms.Timer timerBarraProgresso;
         public System.Windows.Forms.Button btnPesquisar;
         public System.Windows.Forms.Panel panelGrid;
+        public System.Windows.Forms.Panel panelButtons;
     }
 }

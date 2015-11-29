@@ -1,5 +1,6 @@
 ﻿using Bibilioteca;
 using Componente;
+using Logica.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,14 +13,18 @@ using System.Windows.Forms;
 
 namespace BancoGeoEspacial
 {
-    public partial class formBairro : formCadastro
+    public partial class formBairro: formCadastro
     {
         DataTable dtbCoordenadas = new DataTable();
         public formBairro()
         {
             InitializeComponent();
-            this.ListaComponentes = new Control[] { txtNome, txtLatitude, txtLongitude };
+
+            this.ListaComponentes = new Control[] { txtNome, txtLatitude, txtLongitude, btnAdicionar };
+
             Propriedades.TipoDadoGeo = eTipoDadoGeografico.polygon;
+
+            AtualizarComponentes();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -58,10 +63,6 @@ namespace BancoGeoEspacial
             dtbCoordenadas.Columns.Add(dcLongitude);
         }
 
-        private void formBairro_AntesDeSalvar(object source, EventArgs e)
-        {
-            CriarStringPoligono();
-        }
 
         private void CriarStringPoligono()
         {
@@ -94,6 +95,34 @@ namespace BancoGeoEspacial
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void formBairro_AntesDeSalvar(object source, EventArgs e)
+        {
+            CriarStringPoligono();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            dataSetBairro1.bairro.Clear();
+            dataSetBairro1.bairro.Merge(bairro1.BuscarBairros());
+        }
+
+        private void gridPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabPrincipal.SelectedTab = tabPageCadastro;
+        }
+
+        private void btnKml_Click(object sender, EventArgs e)
+        {
+            GeradorKml oGerador = new GeradorKml();
+            string sKml = bairro1.BuscarKml(Convert.ToInt32(((DataRowView)bsoPrincipal.Current)["id"]));
+            oGerador.GerarKml(sKml, eTipoDadoGeografico.polygon);
         }
     }
 }

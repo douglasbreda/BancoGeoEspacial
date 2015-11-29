@@ -41,13 +41,23 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ocorrencia1 = new Logica.Classes.Ocorrencia();
+            this.grdPesquisa = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnKml = new System.Windows.Forms.Button();
             this.tabPagePesquisa.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPrincipal)).BeginInit();
+            this.panelGrid.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetOcorrencia1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisa)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageCadastro
@@ -64,6 +74,19 @@
             // 
             this.bsoPrincipal.DataMember = "ocorrencia";
             this.bsoPrincipal.DataSource = this.dataSetOcorrencia1;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // panelGrid
+            // 
+            this.panelGrid.Controls.Add(this.grdPesquisa);
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.Controls.Add(this.panel4);
+            this.panelButtons.Controls.SetChildIndex(this.panel4, 0);
             // 
             // txtCodigo
             // 
@@ -175,6 +198,65 @@
             // 
             this.ocorrencia1.transaction = null;
             // 
+            // grdPesquisa
+            // 
+            this.grdPesquisa.AutoGenerateColumns = false;
+            this.grdPesquisa.BackgroundColor = System.Drawing.Color.White;
+            this.grdPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdPesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn});
+            this.grdPesquisa.DataSource = this.bsoPrincipal;
+            this.grdPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdPesquisa.Location = new System.Drawing.Point(0, 0);
+            this.grdPesquisa.Name = "grdPesquisa";
+            this.grdPesquisa.ReadOnly = true;
+            this.grdPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdPesquisa.Size = new System.Drawing.Size(641, 284);
+            this.grdPesquisa.TabIndex = 0;
+            this.grdPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPesquisa_CellDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnKml);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(241, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(78, 42);
+            this.panel4.TabIndex = 6;
+            // 
+            // btnKml
+            // 
+            this.btnKml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKml.Location = new System.Drawing.Point(5, 9);
+            this.btnKml.Name = "btnKml";
+            this.btnKml.Size = new System.Drawing.Size(73, 30);
+            this.btnKml.TabIndex = 0;
+            this.btnKml.Text = "KML";
+            this.btnKml.UseVisualStyleBackColor = true;
+            // 
             // formOcorrencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,15 +265,20 @@
             this.ClientSize = new System.Drawing.Size(655, 471);
             this.Name = "formOcorrencias";
             this.Text = "Ocorrências";
+            this.AntesDeSalvar += new Componente.formCadastro.AntesDeGravarEventHandler(this.formOcorrencias_AntesDeSalvar_1);
             this.tabPagePesquisa.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.panelFilter.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPageCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPrincipal)).EndInit();
+            this.panelGrid.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetOcorrencia1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisa)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -211,5 +298,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private Logica.Classes.Ocorrencia ocorrencia1;
+        private System.Windows.Forms.DataGridView grdPesquisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnKml;
     }
 }

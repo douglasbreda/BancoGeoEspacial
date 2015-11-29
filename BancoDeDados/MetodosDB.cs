@@ -100,12 +100,25 @@ namespace BancoDeDados
                                 iContador++;
                             }
 
-                            sCoordenadas = string.Join(",", pontos.AsEnumerable().Select(item => item.X + " " + item.Y).ToArray<string>());
+                            StringBuilder sbCoord = new StringBuilder();
+                            //sCoordenadas = string.Join(",", pontos.AsEnumerable().Select(item => item.X + " " + item.Y).ToArray<string>());
+                            pontos.AsEnumerable().ToList().ForEach(item =>
+                            {
+                                sbCoord.Append(item.X).Replace(',','.');
+                                sbCoord.Append(" ");
+                                sbCoord.Append(item.Y).Replace(',', '.');
+                                sbCoord.Append(";");
+                                sbCoord.Append(" ");
+                            });
+
+                            sCoordenadas = sbCoord.ToString().Replace(';',',');
+                            sCoordenadas = Funcoes.RetirarVirgulasDoFimDaString(sCoordenadas);
                         }
                         else
                         {
                             NpgsqlPoint pontos = new NpgsqlPoint(Convert.ToSingle(pDrw[col].ToString().Substring(0, (Convert.ToInt32(pDrw[col].ToString().Length) / 2))), Convert.ToSingle(pDrw[col].ToString().Substring(Convert.ToInt32(pDrw[col].ToString().Length) / 2)));
                             sCoordenadas = pontos.X + " " + pontos.Y;
+                            sCoordenadas = sCoordenadas.Replace(',', '.');
                         }
                     }
                     else
