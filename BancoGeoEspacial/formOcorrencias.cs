@@ -1,5 +1,6 @@
 ﻿using Bibilioteca;
 using Componente;
+using Logica.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,15 @@ namespace BancoGeoEspacial
             tabPrincipal.SelectedTab = tabPageCadastro;
             txtX.Text = ((DataRowView)bsoPrincipal.Current)["pt_y"].ToString();
             txtY.Text = ((DataRowView)bsoPrincipal.Current)["pt_x"].ToString();
+        }
+
+        private void btnKml_Click(object sender, EventArgs e)
+        {
+            GeradorKml oGerador = new GeradorKml();
+            string sKml = ocorrencia1.BuscarKml(Convert.ToInt32(((DataRowView)bsoPrincipal.Current)["id"]));
+            oGerador.GerarKml(sKml, eTipoDadoGeografico.polygon, ((DataRowView)bsoPrincipal.Current)["descricao"].ToString(), 0);
+
+            MessageBox.Show("O arquivo kml foi gerado com sucesso");
         }
     }
 }

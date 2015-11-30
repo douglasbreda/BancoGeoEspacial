@@ -122,7 +122,9 @@ namespace BancoGeoEspacial
         {
             GeradorKml oGerador = new GeradorKml();
             string sKml = bairro1.BuscarKml(Convert.ToInt32(((DataRowView)bsoPrincipal.Current)["id"]));
-            oGerador.GerarKml(sKml, eTipoDadoGeografico.polygon);
+            oGerador.GerarKml(sKml, eTipoDadoGeografico.polygon, ((DataRowView)bsoPrincipal.Current)["nome"].ToString(), bairro1.BuscarNumeroOcorrencias(Convert.ToInt32(((DataRowView)bsoPrincipal.Current)["id"])));
+
+            MessageBox.Show("O arquivo kml foi gerado com sucesso");
         }
     }
 }

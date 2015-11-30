@@ -1,4 +1,5 @@
-﻿using NegocioPrincipal;
+﻿using Bibilioteca;
+using NegocioPrincipal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -48,12 +49,50 @@ namespace Logica.Classes
         public string BuscarKml(int pCodBairro)
         {
             StringBuilder sbSql = new StringBuilder();
+            DataTable dtbDados = new DataTable();
+            string sRetorno = "";
+
             sbSql.AppendLine(" select");
             sbSql.AppendLine("      st_askml(pl_coordenada) as kml");
             sbSql.AppendLine(" from ");
             sbSql.AppendLine("      bairro");
+            sbSql.AppendLine(" where");
+            sbSql.AppendLine("      bairro.id = " + pCodBairro);
 
-            return ExecutarComando(sbSql).Rows[0]["kml"].ToString();
+            dtbDados = ExecutarComando(sbSql);
+
+            if (dtbDados.Rows.Count > 0)
+                sRetorno = dtbDados.Rows[0]["kml"].ToString();
+
+            return sRetorno;
+        }
+
+        /// <summary>
+        /// Retorna o número de ocorrências por bairro
+        /// </summary>
+        /// <param name="pCodBairro"></param>
+        /// <returns></returns>
+        public int BuscarNumeroOcorrencias(int pCodBairro)
+        {
+            StringBuilder sbSql = new StringBuilder();
+            DataTable dtbOcorrencia = new DataTable();
+            int iNumeroOcorrencia = 0;
+
+            sbSql.AppendLine(" select");
+            sbSql.AppendLine("      count(*) as qtd");
+            sbSql.AppendLine(" from");
+            sbSql.AppendLine("      bairro,");
+            sbSql.AppendLine("      ocorrencia");
+            sbSql.AppendLine(" where");
+            sbSql.AppendLine("      bairro.id = " + pCodBairro);
+            sbSql.AppendLine("      and st_contains(pl_coordenada, ST_GeomFromText(ST_ASTEXT(ocorrencia.pt_ponto), 4326))");
+
+            dtbOcorrencia = ExecutarComando(sbSql);
+
+            if (dtbOcorrencia.Rows.Count > 0)
+                iNumeroOcorrencia = Convert.ToInt32(dtbOcorrencia.Rows[0]["qtd"]);
+
+            return iNumeroOcorrencia;
         }
 
         #endregion Fim [Métodos]

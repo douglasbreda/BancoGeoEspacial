@@ -49,13 +49,15 @@ namespace Logica.Classes
         /// </summary>
         /// <param name="pCodBairro"></param>
         /// <returns></returns>
-        public string BuscarKml(int pCodBairro)
+        public string BuscarKml(int pCodOcorrencia)
         {
             StringBuilder sbSql = new StringBuilder();
             sbSql.AppendLine(" select");
-            sbSql.AppendLine("      st_askml(pl_coordenada) as kml");
+            sbSql.AppendLine("      st_askml(pt_ponto) as kml");
             sbSql.AppendLine(" from ");
-            sbSql.AppendLine("      bairro");
+            sbSql.AppendLine("      ocorrencia");
+            sbSql.AppendLine(" where");
+            sbSql.AppendLine("      ocorrencia.id = " + pCodOcorrencia);
 
             return ExecutarComando(sbSql).Rows[0]["kml"].ToString();
         }

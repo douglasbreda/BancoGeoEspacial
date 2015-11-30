@@ -256,6 +256,7 @@
             this.btnKml.TabIndex = 0;
             this.btnKml.Text = "KML";
             this.btnKml.UseVisualStyleBackColor = true;
+            this.btnKml.Click += new System.EventHandler(this.btnKml_Click);
             // 
             // formOcorrencias
             // 
